@@ -1,3 +1,5 @@
 !*.dll
+*.meta
 /Temp
 /Library
+/.vs

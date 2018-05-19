@@ -21,7 +21,7 @@ public class testDataSQLite : MonoBehaviour {
         /*** 
          * run once for create table
          *
-        //创建名为table1的数据表  
+        //创建名为results的数据表  
         sql.CreateTable("results", new string[] { "id", "name", "result", "date" }, new string[] { "INTEGER", "TEXT", "INTEGER", "TEXT" });
          */
 
