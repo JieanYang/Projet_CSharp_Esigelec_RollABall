@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23436658353814004}
   - component: {fileID: 65061153038807788}
   - component: {fileID: 54951263477264176}
-  - component: {fileID: 114630843646535406}
+  - component: {fileID: 114403012184615622}
   m_Layer: 0
   m_Name: PickUp
   m_TagString: Pick Up
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 7bd1e3a7c3e676e469f59e6d93fc51d5, type: 2}
+  - {fileID: 2100000, guid: 725c9c662fbb2ba488d05ffb6b01a3df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114630843646535406
+--- !u!114 &114403012184615622
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -121,6 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1497429580103052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23a9236b4e1bdfa48bbcafcdadff2192, type: 3}
+  m_Script: {fileID: 11500000, guid: 40f9cb49508637041ab53a5f0ab3403f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
