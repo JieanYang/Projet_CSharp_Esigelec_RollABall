@@ -2,4 +2,5 @@
 *.meta
 /Temp
 /Library
+/Builds
 /.vs
