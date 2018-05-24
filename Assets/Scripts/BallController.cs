@@ -67,7 +67,7 @@ public class BallController : MonoBehaviour {
                 "'" + time_game + "'", "'" + System.DateTime.Now.ToString("yyyy/MM/dd") + "'" });
             sql.CloseConnection();
 
-            winText.text = "You Win!";
+            winText.text = "You win, " + userName.text + "!";
             timeText.text = "Time : " + time_game;
         }
     }
