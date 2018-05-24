@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 using System.Text.RegularExpressions;
 
-public class mainmenu : MonoBehaviour {
-
+public class okButton : MonoBehaviour {
+    public GameObject username;
+    private string UsernameGlobal;
+   
 	// Use this for initialization
 	void Start () {
 		
 	}
-    /*public void PlayGame (){
+    public void PlayGame (){
         if(UsernameGlobal == ""){
             Debug.LogWarning("Username empty");
             
@@ -21,15 +24,16 @@ public class mainmenu : MonoBehaviour {
             print(UsernameGlobal);
         }
         
-    }*/
-    
-	public void QuitGame (){
-        Application.Quit();
     }
     
 	// Update is called once per frame
 	void Update () {
-		//UsernameGlobal = usernameLogin.GetComponent<InputField>().text;
+        if (Input.GetKeyDown(KeyCode.Return)){
+            if (UsernameGlobal != ""){
+                PlayGame ();
+            }
+        }
+		UsernameGlobal = username.GetComponent<InputField>().text;
         //print(UsernameGlobal);
 	}
 }

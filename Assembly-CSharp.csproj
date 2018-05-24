@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\BallController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\mainmenu.cs" />
+     <Compile Include="Assets\Scripts\okButton.cs" />
      <Compile Include="Assets\Scripts\PickUpController.cs" />
      <Compile Include="Assets\Scripts\SQLiteHelper.cs" />
      <Compile Include="Assets\Scripts\testDataSQLite.cs" />
