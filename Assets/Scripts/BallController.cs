@@ -10,6 +10,7 @@ using Mono.Data.Sqlite;
 public class BallController : MonoBehaviour {
 
     public float speed = 15;
+    public Text userName;
     public Text countText;
     public Text winText;
     public Text timeText;
@@ -17,7 +18,6 @@ public class BallController : MonoBehaviour {
     private SQLiteHelper sql;
 
     private int count;
-    private string UserName = "User1";
     private System.DateTime date_start = System.DateTime.Now;
     private System.DateTime date_finish;
 
@@ -26,6 +26,7 @@ public class BallController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         count = 0;
         SetCountText();
+        userName.text = okButton.UsernameGlobal;
         winText.text = "";
         timeText.text = "";
         print("start");
@@ -62,7 +63,7 @@ public class BallController : MonoBehaviour {
             print("time:" + time_game);
 
             sql = new SQLiteHelper("data source=sqlite4unity.db");
-            sql.InsertValues("results", new string[] { "''", "'" + UserName + "'",
+            sql.InsertValues("results", new string[] { "''", "'" + userName.text + "'",
                 "'" + time_game + "'", "'" + System.DateTime.Now.ToString("yyyy/MM/dd") + "'" });
             sql.CloseConnection();
 

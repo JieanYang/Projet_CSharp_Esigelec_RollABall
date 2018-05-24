@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 public class okButton : MonoBehaviour {
     public GameObject username;
-    private string UsernameGlobal;
+    public static string UsernameGlobal;
    
 	// Use this for initialization
 	void Start () {
