@@ -12,8 +12,14 @@ public class BallController : MonoBehaviour {
     public float speed = 15;
     public Text countText;
     public Text winText;
+    public Text timeText;
     private Rigidbody rb;
+    private SQLiteHelper sql;
+
     private int count;
+    private string UserName = "User1";
+    private System.DateTime date_start = System.DateTime.Now;
+    private System.DateTime date_finish;
 
     void Start ()
     {
@@ -21,6 +27,7 @@ public class BallController : MonoBehaviour {
         count = 0;
         SetCountText();
         winText.text = "";
+        timeText.text = "";
         print("start");
 
     }
@@ -47,14 +54,22 @@ public class BallController : MonoBehaviour {
     
     void SetCountText(){
         countText.text = "Count: " + count.ToString();
-        if (count >= 5)
+        if (count >= 12)
         {
+            date_finish = System.DateTime.Now;
+            string time_row = (date_finish - date_start).ToString();
+            string time_game = time_row.Substring(0, time_row.IndexOf("."));
+            print("time:" + time_game);
+
+            sql = new SQLiteHelper("data source=sqlite4unity.db");
+            sql.InsertValues("results", new string[] { "''", "'" + UserName + "'",
+                "'" + time_game + "'", "'" + System.DateTime.Now.ToString("yyyy/MM/dd") + "'" });
+            sql.CloseConnection();
+
             winText.text = "You Win!";
+            timeText.text = "Time : " + time_game;
         }
     }
-    
-    //++++++++++++++++++++++++++++++++
-    private SQLiteHelper sql;
 
     
 	// Update is called once per frame
