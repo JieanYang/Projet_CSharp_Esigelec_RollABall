@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 120045533}
   - component: {fileID: 120045532}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: p1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 431842889}
   - component: {fileID: 431842888}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: p2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1323,8 +1323,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1478,8 +1478,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2382,7 +2382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1101019093
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2416,6 +2416,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee10020a08014171af10d8cc18433de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 120045530}
+  player2: {fileID: 431842886}
+  player3: {fileID: 1130681487}
+  time1: {fileID: 1678655389}
+  time2: {fileID: 497174523}
+  time3: {fileID: 591067089}
 --- !u!1 &1123494472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,7 +2664,7 @@ GameObject:
   - component: {fileID: 1130681490}
   - component: {fileID: 1130681489}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: p3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2856,7 +2862,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Score
+  m_text: 'Time
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
@@ -2927,7 +2935,7 @@ MonoBehaviour:
     textComponent: {fileID: 1175631868}
     characterCount: 5
     spriteCount: 0
-    spaceCount: 0
+    spaceCount: 1
     wordCount: 1
     linkCount: 0
     lineCount: 1
@@ -3612,7 +3620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1573353670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3655,6 +3663,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ee10020a08014171af10d8cc18433de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 120045530}
+  player2: {fileID: 431842886}
+  player3: {fileID: 1130681487}
+  time1: {fileID: 1678655389}
+  time2: {fileID: 497174523}
+  time3: {fileID: 591067089}
 --- !u!1 &1678655389
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,8 +3751,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
