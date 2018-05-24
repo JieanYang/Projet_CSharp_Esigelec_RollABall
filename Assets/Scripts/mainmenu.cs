@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class mainmenu : MonoBehaviour {
-    public static string username = "Unknown";
+    public string UsernameGlobal;
+    public GameObject usernameLogin;
 	// Use this for initialization
 	void Start () {
-		
+		UsernameGlobal = "Unknown";
 	}
     public void PlayGame (){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(UsernameGlobal == ""){
+            Debug.LogWarning("Username empty");
+            
+        }else{
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   
+            print(UsernameGlobal);
+        }
+        
     }
     
 	public void QuitGame (){
@@ -18,6 +27,7 @@ public class mainmenu : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-		
+		UsernameGlobal = usernameLogin.GetComponent<InputField>().text;
+        print(UsernameGlobal);
 	}
 }
