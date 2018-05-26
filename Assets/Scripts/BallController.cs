@@ -32,7 +32,6 @@ public class BallController : MonoBehaviour {
         userName.text = okButton.UsernameGlobal;
         winText.text = "";
         timeText.text = "";
-        print("start");
 
     }
 
@@ -63,7 +62,6 @@ public class BallController : MonoBehaviour {
             date_finish = System.DateTime.Now;
             string time_row = (date_finish - date_start).ToString();
             string time_game = time_row.Substring(0, time_row.IndexOf("."));
-            print("time:" + time_game);
 
             // sql = new SQLiteHelper("data source=sqlite4unity.db");
             // sql.InsertValues("results", new string[] { "''", "'" + userName.text + "'",
@@ -74,7 +72,7 @@ public class BallController : MonoBehaviour {
             timeText.text = "Time : " + time_game;
             levelButton.SetActive(true);
             result_level1 = date_finish - date_start;
-            print(result_level1);
+            print("result1 ->" + result_level1);
 
         }
     }

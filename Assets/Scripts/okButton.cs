@@ -21,7 +21,7 @@ public class okButton : MonoBehaviour {
         }else{
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   
-            print(UsernameGlobal);
+            //print(UsernameGlobal);
         }
         
     }

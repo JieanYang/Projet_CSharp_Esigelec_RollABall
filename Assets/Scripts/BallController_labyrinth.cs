@@ -33,7 +33,6 @@ public class BallController_labyrinth : MonoBehaviour
         userName.text = okButton.UsernameGlobal;
         winText.text = "";
         timeText.text = "";
-        print("start");
 
     }
 
@@ -65,14 +64,13 @@ public class BallController_labyrinth : MonoBehaviour
             date_finish = System.DateTime.Now;
             string time_row = (date_finish - date_start).ToString();
             string time_game = time_row.Substring(0, time_row.IndexOf("."));
-            print("time:" + time_game);
 
 
             winText.text = "You win, " + userName.text + "!";
             timeText.text = "Time : " + time_game;
             BackButton.SetActive(true);
             result_level2 = date_finish - date_start;
-            print(result_level2);
+            print("result2 ->" + result_level2);
 
             // result total
             string time_total_row = (BallController.result_level1 + result_level2).ToString();
@@ -82,6 +80,12 @@ public class BallController_labyrinth : MonoBehaviour
             sql.InsertValues("results", new string[] { "''", "'" + userName.text + "'",
                 "'" + time_game_total + "'", "'" + System.DateTime.Now.ToString("yyyy/MM/dd") + "'" });
             sql.CloseConnection();
+
+            print("result total ->" + time_game_total);
+
+            // reset value of result in the level 1 and the level 2
+            //BallController.result_level1 = System.DateTime.Now - System.DateTime.Now;
+            //result_level2 = System.DateTime.Now - System.DateTime.Now;
         }
     }
 
