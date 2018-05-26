@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Projet_CSharp_Esigelec_RollABall.unity
     guid: 70cfaf9109c7a484f8bfa001944d1680
+  - enabled: 1
+    path: Assets/Labyrinth.unity
+    guid: dd8da367a002c5249b24ea6d759914c8
   m_configObjects: {}
