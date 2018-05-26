@@ -2983,7 +2983,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Back to menu
 --- !u!222 &1252248696
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4351,7 +4351,7 @@ GameObject:
   - component: {fileID: 1898575551}
   - component: {fileID: 1898575550}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: BackMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4384,7 +4384,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1898575548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e5bcdc90ead2f43a93ebd9d107ee7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c931333b5d80464a943d4490af0476c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1898575551
@@ -4427,7 +4427,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1898575550}
-        m_MethodName: BackGame
+        m_MethodName: BackMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

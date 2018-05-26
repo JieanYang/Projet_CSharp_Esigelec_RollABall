@@ -59,12 +59,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BackButton.cs" />
     <Compile Include="Assets\Scripts\BallController.cs" />
     <Compile Include="Assets\Scripts\BallController_labyrinth.cs" />
+    <Compile Include="Assets\Scripts\ButtonActions.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\mainmenu.cs" />
-    <Compile Include="Assets\Scripts\NextLevel_Button.cs" />
     <Compile Include="Assets\Scripts\okButton.cs" />
     <Compile Include="Assets\Scripts\PickUpController.cs" />
     <Compile Include="Assets\Scripts\SQLiteHelper.cs" />
