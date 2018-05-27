@@ -42,16 +42,19 @@ public class mainmenu : MonoBehaviour {
         while (reader.Read())
         {
             if(i==0){
-                i++;
+                
                 player1.GetComponent<TextMeshProUGUI> ().text=reader.GetString(reader.GetOrdinal("name"));
                 time1.GetComponent<TextMeshProUGUI>().text=reader.GetString(reader.GetOrdinal("result"));
-            }else if(i==1){
                 i++;
-                  player2.GetComponent<TextMeshProUGUI> ().text=reader.GetString(reader.GetOrdinal("name"));
+            }else if(i==1){
+                
+                player2.GetComponent<TextMeshProUGUI> ().text=reader.GetString(reader.GetOrdinal("name"));
                 time2.GetComponent<TextMeshProUGUI>().text=reader.GetString(reader.GetOrdinal("result"));
+                i++;
             }else if(i==2){
                   player3.GetComponent<TextMeshProUGUI> ().text=reader.GetString(reader.GetOrdinal("name"));
                 time3.GetComponent<TextMeshProUGUI>().text=reader.GetString(reader.GetOrdinal("result"));
+                i++;
             }
             
             
