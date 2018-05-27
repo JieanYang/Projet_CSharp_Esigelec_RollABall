@@ -22,17 +22,18 @@ public class BallController : MonoBehaviour {
     private int count;
     private System.DateTime date_start = System.DateTime.Now;
     private System.DateTime date_finish;
-    public static System.TimeSpan result_level1 = System.DateTime.Now - System.DateTime.Now;
+    public static System.TimeSpan result_level1;
 
     void Start ()
     {
+        print("start -> BallController");
         rb = GetComponent<Rigidbody>();
         count = 0;
         SetCountText();
         userName.text = okButton.UsernameGlobal;
         winText.text = "";
         timeText.text = "";
-
+        result_level1 = System.DateTime.Now - System.DateTime.Now;
     }
 
     void FixedUpdate ()

@@ -23,17 +23,18 @@ public class BallController_labyrinth : MonoBehaviour
     private int count;
     private System.DateTime date_start = System.DateTime.Now;
     private System.DateTime date_finish;
-    public static System.TimeSpan result_level2 = System.DateTime.Now - System.DateTime.Now;
+    public static System.TimeSpan result_level2;
 
     void Start()
     {
+        print("start -> BallController_labyrinth");
         rb = GetComponent<Rigidbody>();
         count = 0;
         SetCountText();
         userName.text = okButton.UsernameGlobal;
         winText.text = "";
         timeText.text = "";
-
+        result_level2 = System.DateTime.Now - System.DateTime.Now;
     }
 
     void FixedUpdate()
@@ -77,15 +78,24 @@ public class BallController_labyrinth : MonoBehaviour
             string time_game_total = time_total_row.Substring(0, time_total_row.IndexOf("."));
 
             sql = new SQLiteHelper("data source=sqlite4unity.db");
-            sql.InsertValues("results", new string[] { "''", "'" + userName.text + "'",
+            try
+            {
+                sql.CreateTable("results", new string[] { "id", "name", "result", "date" }, 
+                    new string[] { "INTEGER", "TEXT", "INTEGER", "TEXT" });
+            }
+            catch
+            {
+                print("There have had the tabel results");
+            }
+            finally
+            {
+                sql.InsertValues("results", new string[] { "''", "'" + userName.text + "'",
                 "'" + time_game_total + "'", "'" + System.DateTime.Now.ToString("yyyy/MM/dd") + "'" });
-            sql.CloseConnection();
 
-            print("result total ->" + time_game_total);
+                print("result total ->" + time_game_total);
 
-            // reset value of result in the level 1 and the level 2
-            //BallController.result_level1 = System.DateTime.Now - System.DateTime.Now;
-            //result_level2 = System.DateTime.Now - System.DateTime.Now;
+                sql.CloseConnection();
+            }
         }
     }
 
