@@ -59,13 +59,12 @@ public class BallController_labyrinth : MonoBehaviour
 
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString() + "/3";
+        countText.text = "Goal: " + count.ToString() + "/3";
         if (count >= 3)
         {
             date_finish = System.DateTime.Now;
             string time_row = (date_finish - date_start).ToString();
             string time_game = time_row.Substring(0, time_row.IndexOf("."));
-
 
             winText.text = "You win, " + userName.text + "!";
             timeText.text = "Time : " + time_game;

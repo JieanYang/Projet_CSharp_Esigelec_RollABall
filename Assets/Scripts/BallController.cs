@@ -57,7 +57,7 @@ public class BallController : MonoBehaviour {
     }
     
     void SetCountText(){
-        countText.text = "Count: " + count.ToString() + "/3";
+        countText.text = "Goal: " + count.ToString() + "/3";
         if (count >= 3)
         {
             date_finish = System.DateTime.Now;
@@ -66,7 +66,7 @@ public class BallController : MonoBehaviour {
 
             // sql = new SQLiteHelper("data source=sqlite4unity.db");
             // sql.InsertValues("results", new string[] { "''", "'" + userName.text + "'",
-            //     "'" + time_game + "'", "'" + System.DateTime.Now.ToString("yyyy/MM/dd") + "'" });
+            // "'" + time_game + "'", "'" + System.DateTime.Now.ToString("yyyy/MM/dd") + "'" });
             // sql.CloseConnection();
 
             winText.text = "You win, " + userName.text + "!";
