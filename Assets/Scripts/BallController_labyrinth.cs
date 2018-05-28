@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 using System.IO;
 using Mono.Data.Sqlite;
 using UnityEngine.SceneManagement;
 
 public class BallController_labyrinth : MonoBehaviour
 {
-
+   //initialisation de la vitesse de balle
     public float speed = 15;
     public Text userName;
     public Text countText;
@@ -23,8 +21,10 @@ public class BallController_labyrinth : MonoBehaviour
     private int count;
     private System.DateTime date_start = System.DateTime.Now;
     private System.DateTime date_finish;
+    //resultat en seconde du niveau 2
     public static System.TimeSpan result_level2;
-
+    
+    //Fonction d'initialisation
     void Start()
     {
         print("start -> BallController_labyrinth");
@@ -36,7 +36,8 @@ public class BallController_labyrinth : MonoBehaviour
         timeText.text = "";
         result_level2 = System.DateTime.Now - System.DateTime.Now;
     }
-
+    
+//Control de la vitesse et la direction de balle
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -46,7 +47,7 @@ public class BallController_labyrinth : MonoBehaviour
 
         rb.AddForce(movement * speed);
     }
-
+    //Si balle touche un objet, point++
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Pick Up"))
@@ -56,7 +57,7 @@ public class BallController_labyrinth : MonoBehaviour
             SetCountText();
         }
     }
-
+    //Rafraichir l'affichage
     void SetCountText()
     {
         countText.text = "Goal: " + count.ToString() + "/3";
@@ -75,7 +76,8 @@ public class BallController_labyrinth : MonoBehaviour
             // result total
             string time_total_row = (BallController.result_level1 + result_level2).ToString();
             string time_game_total = time_total_row.Substring(0, time_total_row.IndexOf("."));
-
+            
+            //enregistrer le resultat dan sla base de donnees: nom du joueur et son resultat en seconde
             sql = new SQLiteHelper("data source=sqlite4unity.db");
             try
             {

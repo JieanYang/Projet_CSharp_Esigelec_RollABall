@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Text.RegularExpressions;
 
+//Bouton OK dans la page login
 public class okButton : MonoBehaviour {
     public GameObject username;
     public static string UsernameGlobal;
@@ -15,11 +16,11 @@ public class okButton : MonoBehaviour {
 		
 	}
     public void PlayGame (){
+        //Entrer dans le jeu si le nom du joueur est rempli
         if(UsernameGlobal == ""){
             Debug.LogWarning("Username empty");
             
         }else{
-            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   
             //print(UsernameGlobal);
         }
@@ -34,6 +35,5 @@ public class okButton : MonoBehaviour {
             }
         }
 		UsernameGlobal = username.GetComponent<InputField>().text;
-        //print(UsernameGlobal);
 	}
 }

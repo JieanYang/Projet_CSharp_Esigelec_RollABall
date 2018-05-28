@@ -16,24 +16,22 @@ public class mainmenu : MonoBehaviour {
     public GameObject time2;
     public GameObject time3;
     private SQLiteHelper sql;
+    
 	// Use this for initialization
 	void Start () {
-	
         
 	}
-
-    public void GetTopList (){
-        
-    }
+    
+    //fonction qui permet de quitter l'application
 	public void QuitGame (){
         Application.Quit();
     }
     
 	// Update is called once per frame
 	void Update () {
-		//UsernameGlobal = usernameLogin.GetComponent<InputField>().text;
-        //print(UsernameGlobal);
-        	sql = new SQLiteHelper("data source=sqlite4unity.db");
+        
+        //sql qui permet d'afficher la liste du top 3 joueurs
+        sql = new SQLiteHelper("data source=sqlite4unity.db");
         SqliteDataReader reader;
         
         reader = sql.ExecuteQuery("SELECT name,result FROM results ORDER BY result ASC");
@@ -42,28 +40,20 @@ public class mainmenu : MonoBehaviour {
         while (reader.Read())
         {
             if(i==0){
-                
                 player1.GetComponent<TextMeshProUGUI> ().text=reader.GetString(reader.GetOrdinal("name"));
                 time1.GetComponent<TextMeshProUGUI>().text=reader.GetString(reader.GetOrdinal("result"));
                 i++;
             }else if(i==1){
-                
                 player2.GetComponent<TextMeshProUGUI> ().text=reader.GetString(reader.GetOrdinal("name"));
                 time2.GetComponent<TextMeshProUGUI>().text=reader.GetString(reader.GetOrdinal("result"));
                 i++;
             }else if(i==2){
-                  player3.GetComponent<TextMeshProUGUI> ().text=reader.GetString(reader.GetOrdinal("name"));
+                player3.GetComponent<TextMeshProUGUI> ().text=reader.GetString(reader.GetOrdinal("name"));
                 time3.GetComponent<TextMeshProUGUI>().text=reader.GetString(reader.GetOrdinal("result"));
                 i++;
             }
             
-            
-           // Debug.Log(reader.GetString(reader.GetOrdinal("name")));
-            //读取Age
-            //Debug.Log(reader.GetInt32(reader.GetOrdinal("result")));
-           
         }
-
         //close the connection
         //sql.CloseConnection();
 	}

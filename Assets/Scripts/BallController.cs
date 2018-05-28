@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 using System.IO;
 using Mono.Data.Sqlite;
 
 public class BallController : MonoBehaviour {
-
+    
+    //initialisation de la vitesse de balle
     public float speed = 15;
     public Text userName;
     public Text countText;
@@ -22,8 +21,10 @@ public class BallController : MonoBehaviour {
     private int count;
     private System.DateTime date_start = System.DateTime.Now;
     private System.DateTime date_finish;
+    //resultat en seconde du niveau 1
     public static System.TimeSpan result_level1;
-
+    
+    //Fonction d'initialisation
     void Start ()
     {
         print("start -> BallController");
@@ -35,7 +36,8 @@ public class BallController : MonoBehaviour {
         timeText.text = "";
         result_level1 = System.DateTime.Now - System.DateTime.Now;
     }
-
+    
+    //Control de la vitesse et la direction de balle
     void FixedUpdate ()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -45,7 +47,8 @@ public class BallController : MonoBehaviour {
 
         rb.AddForce(movement * speed);
     }
-
+    
+    //Si balle touche un objet, point++
     void OnTriggerEnter (Collider other)
     {
         if (other.gameObject.CompareTag("Pick Up"))
@@ -56,6 +59,7 @@ public class BallController : MonoBehaviour {
         }
     }
     
+    //Rafraichir l'affichage
     void SetCountText(){
         countText.text = "Goal: " + count.ToString() + "/3";
         if (count >= 3)
