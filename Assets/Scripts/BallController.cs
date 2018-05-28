@@ -57,8 +57,8 @@ public class BallController : MonoBehaviour {
     }
     
     void SetCountText(){
-        countText.text = "Count: " + count.ToString() + "/12";
-        if (count >= 1)
+        countText.text = "Count: " + count.ToString() + "/3";
+        if (count >= 3)
         {
             date_finish = System.DateTime.Now;
             string time_row = (date_finish - date_start).ToString();
